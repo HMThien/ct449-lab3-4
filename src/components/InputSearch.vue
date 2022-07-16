@@ -3,11 +3,11 @@ import { def } from "@vue/shared";
 
     export default{
         props: {
-            modelValue: { type: String, default: ""}
+            modelValue: { type: String, default: ""},
         },
         emits: ["submit","update: modelValue"],
         methods: {
-            updateModeValue(e) {
+            updateModelValue(e) {
                 this.$emit("update:modelValue", e.target.value);
             },
             submit() {
@@ -23,7 +23,7 @@ import { def } from "@vue/shared";
             class="form-control"
             placeholder="Nhập thông tin cần tìm"
             :value="modelValue"
-            @input="updateModeValue"   
+            @input="updateModelValue"   
             @keyup.enter="submit" 
         />
         <div class="input-group-append">
